@@ -23,7 +23,7 @@ class UserGenerator(Generator):
             for first_name in first_names:
                 user = User(first_name, last_name)
                 users.append(user)
-            return users
+        return users
 
     def generate(self):
         first_names = self.first_name_generator.generate()

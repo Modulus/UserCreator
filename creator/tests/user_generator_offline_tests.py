@@ -22,5 +22,6 @@ class UserGeneratorOfflineTests(unittest.TestCase):
 
     def test_generate_source_and_mode_creates_users(self):
         users = self.generator.generate()
+        actual = len(users)
         self.assertTrue(users, "List is empty, this should not happen!")
-        self.assertEquals(2716000, len(users), "Should have this many users, check if something got added or removed from source")
+        self.assertEquals(2716000, actual, "Amount not expected was {}".format(actual))
