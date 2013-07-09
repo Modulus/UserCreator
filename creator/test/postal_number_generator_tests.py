@@ -10,8 +10,12 @@ class PostalNumberGeneratorTests(unittest.TestCase):
     def setUp(self):
         self.generator = PostalNumberCreator("../files/postnumre.txt")
 
-    def test_generate_has_None_inut_result_empty_list(self):
+    def test_generate_has_None_input_result_empty_list(self):
         self.generator = PostalNumberCreator(None)
+        self.assertListEqual([], self.generator.generate())
+
+    def test_generate_has_empty_input_empty_list(self):
+        self.generator = PostalNumberCreator("")
         self.assertListEqual([], self.generator.generate())
 
     def test_generate_has_elements(self):
