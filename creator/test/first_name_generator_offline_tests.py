@@ -19,3 +19,10 @@ class FirstNameGeneratorOnlineTests(unittest.TestCase):
         self.assertIsNotNone(result, "List is None, should never be the case!")
         self.assertTrue(len(result) > 300, "Result should have data, it is now empty!!")
 
+        #Print the result
+        for user in result:
+            print user
+
+
+
+

@@ -4,17 +4,20 @@ import random
 
 from pymongo import MongoClient
 
+
 class MongoConnector():
 
     def create_users(self, user_list):
         client = MongoClient('localhost', 27017)
+        client.drop_database("test")
+
         db = client.test
 
-        db.drop()
+        for user in user_list:
+            db.test.insert(user)
 
-        print(type(user_list))
-        db.test.insert(user_list)
-        #
+
+        # #
         # for e in db.test.find():
         #     print(e)
 

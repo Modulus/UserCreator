@@ -8,15 +8,15 @@ from creator.user_generator import UserGenerator
 class UserGeneratorOfflineTests(unittest.TestCase):
 
     def setUp(self):
-        self.generator = UserGenerator("offline", ["../files/boy_names_ssb.html", "../files/girl_names_ssb.html"], ["../files/sur_names_1_ssb.html", "../files/sur_names_2_ssb.html"])
+        self.generator = UserGenerator("offline", ["../files/boy_names_ssb.html", "../files/girl_names_ssb.html"], ["../files/sur_names_1_ssb.html", "../files/sur_names_2_ssb.html"], "../files/postnumre.txt")
 
     def test_empty_input_empty_list(self):
-        generator = UserGenerator(None, None)
+        generator = UserGenerator(None, None, None, None)
         result = generator.generate()
         self.assertFalse(result, "Should be empty, no input given")
 
     def test_empty_source_empty_list(self):
-        generator = UserGenerator("online", [])
+        generator = UserGenerator("online", [], [], None)
         result = generator.generate()
         self.assertFalse(result)
 

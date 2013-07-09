@@ -2,6 +2,7 @@ __author__ = 'JohnSigvald'
 
 from bs4 import BeautifulSoup
 import urllib2
+import codecs
 
 from creator.generator import Generator
 
@@ -32,7 +33,7 @@ class FirstNameGenerator(Generator):
     def generate_offline(self):
         names = []
         for source in self.sources:
-            contents = open(source, "r")
+            contents = codecs.open(source, "r", "utf-8")
             self.parse(contents, names)
 
         return names
@@ -44,5 +45,5 @@ class FirstNameGenerator(Generator):
 
     def extract_anchor_data(self, output, parser):
         for link in parser.find_all("a"):
-            output.append(str(link.contents))
+            output.append(link.string)
         return output

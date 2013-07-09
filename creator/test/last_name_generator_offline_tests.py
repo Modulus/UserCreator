@@ -19,3 +19,7 @@ class LastNameGeneratorOfflineTests(unittest.TestCase):
         result = self.generator.generate()
         self.assertIsNotNone(result, "Result is None, nothing created!")
         self.assertTrue(len(result) > 3000, "Result has no elements!")
+
+        #Print the result
+        for element in result:
+            print(element)

@@ -2,6 +2,7 @@ __author__ = 'JohnSigvald'
 
 from bs4 import BeautifulSoup
 import urllib2
+import codecs
 
 from creator.generator import Generator
 
@@ -20,6 +21,7 @@ class LastNameGenerator(Generator):
         else:
             return []
 
+    #TODO: Finish this
     def generate_online(self):
         names = []
         for source in self.sources:
@@ -33,7 +35,7 @@ class LastNameGenerator(Generator):
         names = []
 
         for source in self.sources:
-            source_content = open(source, "r").read()
+            source_content = codecs.open(source, "r", "utf-8").read()
             self.parse(source_content, names)
         return names
 
@@ -45,4 +47,4 @@ class LastNameGenerator(Generator):
             tds = tr.findAll("td")
             #Name is in the third td tag, extracting
             if tds:
-                output.append(str(tds[2].contents))
+                output.append(tds[2].string)

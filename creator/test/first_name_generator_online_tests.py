@@ -18,3 +18,7 @@ class FirstNameGeneratorOnlineTests(unittest.TestCase):
         result = self.generator.generate()
         self.assertIsNotNone(result, "Result null, check connection")
         self.assertTrue(len(result) > 300)
+
+        #Print result
+        for element in result:
+            print(element)
