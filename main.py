@@ -11,7 +11,7 @@ if __name__ == "__main__":
                                         "creator/files/postnumre.txt")
     print("Generating users")
 
-    users = generator.generate()
+    users = generator.generate(100)
 
     print("Finished generating users")
 

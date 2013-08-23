@@ -11,11 +11,12 @@ class MongoConnector():
         client = MongoClient('localhost', 27017)
         client.drop_database("tests")
 
+
         db = client.test
 
-        for user in user_list:
-            db.test.insert(user)
-
+        db.test.insert(user_list)
+        # for user in iter(user_list):
+        #     db.test.insert(user.json())
 
         # #
         # for e in db.tests.find():

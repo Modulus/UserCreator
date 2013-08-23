@@ -1,25 +1,27 @@
-from ming import Session
-from ming.odm.declarative import MappedClass
+from ming import Session, Document, create_datastore
 from ming import schema
-from ming.odm.odmsession import ODMSession
-from ming.odm.property import FieldProperty, RelationProperty
+from ming.odm.property import Field
 from models.address import Address
+
 
 __author__ = 'Modulus'
 
+bind = create_datastore("test")
+session = Session(bind)
 
-class User(MappedClass):
+
+class User(Document):
 
     class __mongometa__:
-        session = ODMSession(doc_session=Session())
+        session = session
         name = "user"
-        _id = FieldProperty(schema.ObjectId)
 
-    firstName = FieldProperty(str)
-    lastName = FieldProperty(str)
-    address = FieldProperty(Address)
-
-    def __init__(self, first_name, last_name, address):
-        self.firstName = first_name.encode("utf-8")
-        self.firstName = last_name.encode("utf-8")
-        self.address = address
+    _id = Field(schema.ObjectId)
+    firstName = Field(str)
+    lastName = Field(str)
+    address = Field(Address)
+    #
+    # def __init__(self, firstName, lastName, address):
+    #     self.firstName = firstName
+    #     self.lastName = lastName
+    #     self.address = address

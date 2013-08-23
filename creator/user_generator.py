@@ -25,24 +25,36 @@ class UserGenerator(Generator):
             a_index = random.randint(0, len(postal_codes) - 1)
             postal_line = postal_codes[a_index]
             postal_list = postal_line.split(" ", 2)
-            address = Address(postal_list[0], postal_list[1])
+            address = Address(dict(code=postal_list[0], location=postal_list[1]))
             return address
         return None
 
-    def create_name_list(self, first_names, last_names, postal_codes):
+    def create_name_list(self, first_names, last_names, postal_codes, amount=-1):
         users = []
-        for last_name in last_names:
-            for first_name in first_names:
+        if amount < 0:
+            for last_name in last_names:
+                for first_name in first_names:
+                    address = self.create_postal_info(postal_codes)
+                    user = User(dict(firstName=first_name, lastName=last_name, address=address))
+                    users.append(user)
+        else:
+            for index in range(0, amount):
+                last_n_index = random.randint(0, len(last_names))
+                first_n_index = random.randint(0, len(first_names))
                 address = self.create_postal_info(postal_codes)
-                user = User(first_name, last_name, address)
+                user = User(dict(firstName=first_names[first_n_index], lastName=last_names[last_n_index], address=address))
                 users.append(user)
         return users
 
-    def generate(self):
+    def generate(self, amount=-1):
         first_names = self.first_name_generator.generate()
         last_names = self.last_name_generator.generate()
         postal_codes = self.postal_code_generator.generate()
-        return self.create_name_list(first_names, last_names, postal_codes)
+
+        if amount > 0:
+            return self.create_name_list(first_names, last_names, postal_codes, amount)
+        else:
+            return self.create_name_list(first_names, last_names, postal_codes)
 
 
 

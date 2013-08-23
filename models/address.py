@@ -1,8 +1,23 @@
 __author__ = 'Modulus'
 
+from ming import Session, Document , create_datastore
+from ming import schema
+from ming.odm.property import Field
 
-class Address():
+bind = create_datastore("test")
+session = Session(bind)
 
-    def __init__(self, code, location):
-        self.code = code
-        self.location = location
+
+class Address(Document):
+
+    class __mongometa__:
+        session = session
+        name = "address"
+
+    _id = Field(schema.ObjectId)
+    code = Field(int)
+    location = Field(str)
+
+    # def __init__(self, code, location):
+    #     self.code = code
+    #     self.location = location

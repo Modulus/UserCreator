@@ -12,7 +12,7 @@ class PostalNumberCreator(Generator):
 
     def generate(self):
         if self.source:
-            file = codecs.open(self.source, "r", "utf-8")
+            file = codecs.open(self.source, "rb", "utf-8")
             return file.readlines()
         else:
             return []

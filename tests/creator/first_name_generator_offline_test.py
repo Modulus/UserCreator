@@ -7,8 +7,8 @@ from creator.user_generator import FirstNameGenerator
 
 class FirstNameGeneratorOnlineTest(unittest.TestCase):
     def setUp(self):
-        self.generator = FirstNameGenerator("offline", ["../creator/files/boy_names_ssb.html",
-                                                        "../creator/files/girl_names_ssb.html"])
+        self.generator = FirstNameGenerator("offline", ["/creator/files/boy_names_ssb.html",
+                                                        "/creator/files/girl_names_ssb.html"])
 
     def test_mode_empty_empty_list(self):
         generator = FirstNameGenerator()
