@@ -9,7 +9,7 @@ class MongoConnector():
 
     def create_users(self, user_list):
         client = MongoClient('localhost', 27017)
-        client.drop_database("test")
+        client.drop_database("tests")
 
         db = client.test
 
@@ -18,13 +18,13 @@ class MongoConnector():
 
 
         # #
-        # for e in db.test.find():
+        # for e in db.tests.find():
         #     print(e)
 
     if __name__ == "__main__":
         client = MongoClient("localhost", 27017)
         db = client.test
-        client.drop_database("test")
+        client.drop_database("tests")
 
         elements = [
             {"user_name": "john", "passwd":"1234idiot", "integer": random.randint(5, 99129291911)},
