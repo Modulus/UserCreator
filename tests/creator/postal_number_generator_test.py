@@ -1,3 +1,5 @@
+import os
+
 __author__ = 'Modulus'
 
 import unittest
@@ -8,7 +10,8 @@ from creator.postal_number_generator import PostalNumberCreator
 class PostalNumberGeneratorTest(unittest.TestCase):
 
     def setUp(self):
-        self.generator = PostalNumberCreator("../files/postnumre.txt")
+        root_dir = os.path.dirname(__file__)
+        self.generator = PostalNumberCreator(os.path.join(root_dir, "files/postnumre.txt"))
 
     def test_generate_has_None_input_result_empty_list(self):
         self.generator = PostalNumberCreator(None)

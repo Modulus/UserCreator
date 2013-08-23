@@ -1,3 +1,5 @@
+import os
+
 __author__ = 'Modulus'
 
 import unittest
@@ -7,8 +9,11 @@ from creator.user_generator import FirstNameGenerator
 
 class FirstNameGeneratorOnlineTest(unittest.TestCase):
     def setUp(self):
-        self.generator = FirstNameGenerator("offline", ["/creator/files/boy_names_ssb.html",
-                                                        "/creator/files/girl_names_ssb.html"])
+        root = os.path.dirname(__file__)
+        boy_names = os.path.join(root, "files/boy_names_ssb.html")
+        girl_names = os.path.join(root, "files/girl_names_ssb.html")
+        self.generator = FirstNameGenerator("offline", [boy_names,
+                                                        girl_names])
 
     def test_mode_empty_empty_list(self):
         generator = FirstNameGenerator()

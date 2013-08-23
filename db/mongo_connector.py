@@ -5,7 +5,7 @@ import random
 from pymongo import MongoClient
 
 
-class MongoConnector():
+class MongoConnector(object):
 
     def create_users(self, user_list):
         client = MongoClient('localhost', 27017)
