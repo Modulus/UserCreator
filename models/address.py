@@ -17,7 +17,3 @@ class Address(Document):
     _id = Field(schema.ObjectId)
     code = Field(int)
     location = Field(str)
-
-    # def __init__(self, code, location):
-    #     self.code = code
-    #     self.location = location

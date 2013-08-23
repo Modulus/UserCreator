@@ -1,6 +1,6 @@
 from creator import first_name_generator
 
-__author__ = 'JohnSigvald'
+__author__ = 'Modulus'
 
 import random
 

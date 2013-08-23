@@ -1,4 +1,4 @@
-__author__ = 'JohnSigvald'
+__author__ = 'Modulus'
 
 if __name__ == "__main__":
     print("Initalizing")

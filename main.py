@@ -1,4 +1,4 @@
-__author__ = 'JohnSigvald'
+__author__ = 'Modulus'
 
 from creator import user_generator as generator
 from db.mongo_connector import MongoConnector
@@ -11,7 +11,7 @@ if __name__ == "__main__":
                                         "creator/files/postnumre.txt")
     print("Generating users")
 
-    users = generator.generate(100)
+    users = generator.generate()
 
     print("Finished generating users")
 

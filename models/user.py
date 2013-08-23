@@ -20,8 +20,3 @@ class User(Document):
     firstName = Field(str)
     lastName = Field(str)
     address = Field(Address)
-    #
-    # def __init__(self, firstName, lastName, address):
-    #     self.firstName = firstName
-    #     self.lastName = lastName
-    #     self.address = address
