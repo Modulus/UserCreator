@@ -1,10 +1,8 @@
-from creator import first_name_generator
-
 __author__ = 'Modulus'
 
 import random
 
-from creator.generator import Generator
+
 from creator.first_name_generator import FirstNameGenerator
 from creator.last_name_generator import LastNameGenerator
 from creator.postal_number_generator import PostalNumberCreator
@@ -12,7 +10,7 @@ from models.user import User
 from models.address import Address
 
 
-class UserGenerator(Generator):
+class UserGenerator(object):
 
     def __init__(self, mode=None, first_name_sources=None, last_name_sources=None, postal_source=None):
         self.mode = mode

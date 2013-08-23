@@ -4,10 +4,8 @@ from bs4 import BeautifulSoup
 import urllib2
 import codecs
 
-from creator.generator import Generator
 
-
-class LastNameGenerator(Generator):
+class LastNameGenerator(object):
 
     def __init__(self, mode=None, sources=None):
         self.mode = mode

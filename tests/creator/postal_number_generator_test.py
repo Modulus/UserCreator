@@ -22,9 +22,9 @@ class PostalNumberGeneratorTest(unittest.TestCase):
         self.assertListEqual([], self.generator.generate())
 
     def test_generate_has_elements(self):
-        list = self.generator.generate()
+        postal_list = self.generator.generate()
         self.assertTrue(list)
-        self.assertEquals(35308, len(list), "List of postal codes is incorrect")
+        self.assertEquals(35308, len(postal_list), "List of postal codes is incorrect")
 
         for value in range(25000, 30000):
             print(list[value])
