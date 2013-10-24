@@ -29,8 +29,8 @@ class MongoConnector(object):
 
         elements = [
             {"user_name": "john", "passwd":"1234idiot", "integer": random.randint(5, 99129291911)},
-            {"user_name": "karoline", "passwd": "1234haxxx000ro123", "integer": random.randint(5, 19192882233)},
-            {"user_name":"kjetil", "passwod": "passvord", "integer": random.randint(5, 7892713897)}
+            {"user_name": "ida", "passwd": "1234haxxx000ro123", "integer": random.randint(5, 19192882233)},
+            {"user_name":"asgeir", "passwod": "passvord", "integer": random.randint(5, 7892713897)}
         ]
 
         for element in elements:
