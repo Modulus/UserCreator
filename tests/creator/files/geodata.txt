@@ -1,0 +1,5 @@
+Oslo,Oslo,0001,Oslo,['59.913', '10.746'],Norway;
+Oslo,Oslo,0010,Oslo,['59.913', '10.746'],Norway;
+Oslo,Oslo,0010,Oslo,['59.913', '10.746'],Norway;
+Oslo,Oslo,0010,Oslo,['59.913', '10.746'],Norway;
+Oslo,Oslo,0001,Oslo,['59.913', '10.746'],Norway;
