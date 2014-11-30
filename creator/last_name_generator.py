@@ -1,7 +1,7 @@
 __author__ = 'Modulus'
 
 from bs4 import BeautifulSoup
-import urllib2
+import urllib
 import codecs
 
 
@@ -23,7 +23,7 @@ class LastNameGenerator(object):
     def generate_online(self):
         names = []
         for source in self.sources:
-            contents = urllib2.urlopen(source)
+            contents = urllib.request.urlopen(source)
             parser = BeautifulSoup(contents.read())
             for element in parser.find_all("tr"):
                 print(element)

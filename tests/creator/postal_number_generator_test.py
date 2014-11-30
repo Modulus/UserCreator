@@ -26,5 +26,5 @@ class PostalNumberGeneratorTest(unittest.TestCase):
         self.assertTrue(list)
         self.assertEquals(35308, len(postal_list), "List of postal codes is incorrect")
 
-        for value in range(25000, 30000):
-            print(list[value])
+        # for value in range(25000, 30000):
+        #     print(list[value])

@@ -27,7 +27,7 @@ class FirstNameGeneratorOnlineTest(unittest.TestCase):
 
         #Print the result
         for user in result:
-            print user
+            print(user)
 
 
 

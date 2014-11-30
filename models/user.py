@@ -1,22 +1,23 @@
-from ming import Session, Document, create_datastore
-from ming import schema
-from ming.odm.property import Field
+from mongoengine import Document, StringField, ReferenceField
 from models.address import Address
 
 
 __author__ = 'Modulus'
 
-bind = create_datastore("test")
-session = Session(bind)
-
 
 class User(Document):
+    meta = {
+        "collection": "user"
+    }
 
-    class __mongometa__:
-        session = session
-        name = "user"
+    first_name = StringField()
+    last_name = StringField()
+    address = ReferenceField(Address)
 
-    _id = Field(schema.ObjectId)
-    firstName = Field(str)
-    lastName = Field(str)
-    address = Field(Address)
+    def json(self):
+        return {
+            "id": str(self.id),
+            "firstName": self.first_name,
+            "lastName": self.last_name,
+            "address": self.address
+        }

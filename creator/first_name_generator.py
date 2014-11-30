@@ -1,7 +1,7 @@
 __author__ = 'Modulus'
 
 from bs4 import BeautifulSoup
-import urllib2
+import urllib
 import codecs
 
 
@@ -23,7 +23,7 @@ class FirstNameGenerator(object):
         names = []
 
         for source in self.sources:
-            page_contents = urllib2.urlopen(source)
+            page_contents = urllib.request.urlopen(source)
             self.parse(page_contents, names)
 
         return names
