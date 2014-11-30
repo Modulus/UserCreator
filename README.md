@@ -7,6 +7,6 @@ Modules needed
 ===============
 BeautifulSoup4
 PyMongo
-Ming
+MongoEngine
 pytest
 

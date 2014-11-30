@@ -1,7 +1,7 @@
 __author__ = 'Modulus'
 
 from creator import user_generator
-from db.mongo_connector import MongoConnector
+from db.mongo_connector import create_users
 
 
 if __name__ == "__main__":
@@ -11,14 +11,13 @@ if __name__ == "__main__":
     # generator.
     print("Generating users")
 
-    users = generator.generate()
+    users = generator.generate(amount=10)
 
     print("Finished generating users")
 
     print("Saving data")
 
-    db = MongoConnector()
-    db.create_users(users)
+    create_users(users)
 
     print("Saved data")
 

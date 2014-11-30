@@ -1,0 +1,4 @@
+Troms,Tromsø,9037,Tromsø,['69.649', '18.955'],Norway;
+Troms,Tromsø,9037,Tromsø,['69.649', '18.955'],Norway;
+Troms,Tromsø,9037,Tromsø,['69.649', '18.955'],Norway;
+Troms,Tromsø,9037,Tromsø,['69.649', '18.955'],Norway;
