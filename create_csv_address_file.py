@@ -39,7 +39,7 @@ def do_magic():
             logger.error("Missing postal number")
 
         logger.info("Finished reading number sleeping for a bit...")
-        sleep(25)
+        sleep(3)
 
 
 
