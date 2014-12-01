@@ -77,6 +77,22 @@ def _extract_postal_list():
     return postal_generator.generate()
 
 
+def extract_address_csv(csv_line):
+    parts = csv_line.split(",")
+
+    county = parts[0]
+    municipality = parts[1]
+    code = parts[2]
+    location = parts[3]
+    coordinates = parts[4]
+    country = parts[5]
+
+    address = Address(municipality=municipality, county=county,
+                      location=location, country=country, coordinates=coordinates, code=code)
+
+    return address
+
+
 def match_class(target):
     target = target.split()
 
