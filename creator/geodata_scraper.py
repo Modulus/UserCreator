@@ -93,6 +93,14 @@ def extract_address_csv(csv_line):
     return address
 
 
+def extract_address_all_csv(csv_data):
+    addresses = []
+    for line in csv_data:
+        address = extract_address_csv(line)
+        addresses.append(address)
+    return addresses
+
+
 def match_class(target):
     target = target.split()
 

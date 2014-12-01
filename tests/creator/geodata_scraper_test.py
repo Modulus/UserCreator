@@ -2,7 +2,8 @@
 import codecs
 import os
 from unittest import TestCase
-from creator.geodata_scraper import extract_address, _extract_postal_list, extract_all, extract_address_csv
+from creator.geodata_scraper import extract_address, _extract_postal_list, extract_all, extract_address_csv, \
+    extract_address_all_csv
 from creator.postal_number_generator import PostalNumberCreator
 from models.address import Address
 
@@ -32,6 +33,21 @@ class GeodataScraperTest(TestCase):
                            location="Bergen", country="Norway", coordinates=["60.393", "5.324"], code="5059")
 
         self.assertEquals(actual, expected)
+
+    def test_extract_address_all_csv(self):
+        root_dir = os.path.dirname(__file__)
+        file = os.path.join(root_dir, "files/geodata.txt")
+        contents = []
+        with codecs.open(file, "r", "utf-8") as geo_file:
+            contents = geo_file.readlines()
+
+        result = extract_address_all_csv(contents)
+
+        self.assertIsNotNone(result)
+        self.assertEquals(4472, len(result))
+
+        self.assertIsNotNone(result)
+        self.assertEquals(4472, len(result))
 
 
     # def test_read_csv_file(self):
